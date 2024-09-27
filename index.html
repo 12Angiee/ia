@@ -3,87 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Clase de redes neuronales 12/09/2024</h1>
-    <p>
-        la clase de hoy aprendi sobre redes neuronales
-        primero : 
-        Importación de bibliotecas y carga de datos
-Se importan las bibliotecas necesarias, como TensorFlow y Keras, para trabajar con redes neuronales. 
-Luego, se carga el conjunto de datos CIFAR-10, que consta de 60,000 imágenes de 32x32 píxeles en 10 clases diferentes
-Preprocesamiento de datos
-Las imágenes se normalizan y se dividen en conjuntos de entrenamiento y prueba. Las etiquetas se convierten a formato categórico
-
-Se define una arquitectura de red neuronal convolucional utilizando Keras Sequential API.
-La red incluye capas convolucionales, de agrupación máxima y densas, con activaciones ReLU y una capa de salida con activación softmax para clasificación multiclase
-
-El modelo se compila con un optimizador Adam, una función de pérdida categórica cruzada y métricas de precisión. 
-Luego, se entrena el modelo utilizando el conjunto de datos de entrenamiento durante 10 épocas
-
-El modelo entrenado se evalúa utilizando el conjunto de datos de prueba, obteniendo métricas de pérdida y precisión
-
-Finalmente, se muestra cómo utilizar el modelo entrenado para predecir las clases de nuevas imágenes
-
-
-    <title>Resultados de Búsqueda</title>
+    <title>Clase de Redes Neuronales</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
         table {
-            width: 50%;
+            width: 70%;
             margin: 20px auto;
             border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
         }
+
         th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+
+        tr:hover {
+            background-color: #d3eaf5;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 40px;
+        }
+
+        .code-block {
+            background-color: #282c34;
+            color: #61dafb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 800px;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
 
-<h2 style="text-align:center;">Resultados de Búsqueda</h2>
+    <h1>Clase de Redes Neuronales 12/09/2024</h1>
 
-<table>
-    <tr>
-        <th>Método</th>
-        <th>Grupo</th>
-        <th>Estados Explorados</th>
-    </tr>
-    <tr>
-        <td>DFS</td>
-        <td>Grupo A</td>
-        <td>227</td>
-    </tr>
-    <tr>
-        <td>DFS</td>
-        <td>Grupo B</td>
-        <td>265</td>
-    </tr>
-    <tr>
-        <td>BFS</td>
-        <td>Grupo A</td>
-        <td>331</td>
-    </tr>
-    <tr>
-        <td>BFS</td>
-        <td>Grupo B</td>
-        <td>319</td>
-    </tr>
-</table>
-
-</body>
-</html>
-
-
-        
+    <p>
+        La clase de hoy aprendí sobre redes neuronales:
+        <br><br>
+        <strong>Primero:</strong> Importación de bibliotecas y carga de datos. Se importan las bibliotecas necesarias, como TensorFlow y Keras, para trabajar con redes neuronales. Luego, se carga el conjunto de datos CIFAR-10, que consta de 60,000 imágenes de 32x32 píxeles en 10 clases diferentes.
+        <br><br>
+        <strong>Preprocesamiento de datos:</strong> Las imágenes se normalizan y se dividen en conjuntos de entrenamiento y prueba. Las etiquetas se convierten a formato categórico.
+        <br><br>
+        Se define una arquitectura de red neuronal convolucional utilizando Keras Sequential API. La red incluye capas convolucionales, de agrupación máxima y densas, con activaciones ReLU y una capa de salida con activación softmax para clasificación multiclase.
+        <br><br>
+        El modelo se compila con un optimizador Adam, una función de pérdida categórica cruzada y métricas de precisión. Luego, se entrena el modelo utilizando el conjunto de datos de entrenamiento durante 10 épocas.
+        <br><br>
+        El modelo entrenado se evalúa utilizando el conjunto de datos de prueba, obteniendo métricas de pérdida y precisión. Finalmente, se muestra cómo utilizar el modelo entrenado para predecir las clases de nuevas imágenes.
     </p>
+
+    <h2>Resultados de Búsqueda</h2>
+
+    <table>
+        <tr>
+            <th>Método</th>
+            <th>Grupo</th>
+            <th>Estados Explorados</th>
+        </tr>
+        <tr>
+            <td>DFS</td>
+            <td>Grupo A</td>
+            <td>227</td>
+        </tr>
+        <tr>
+            <td>DFS</td>
+            <td>Grupo B</td>
+            <td>265</td>
+        </tr>
+        <tr>
+            <td>BFS</td>
+            <td>Grupo A</td>
+            <td>331</td>
+        </tr>
+        <tr>
+            <td>BFS</td>
+            <td>Grupo B</td>
+            <td>319</td>
+        </tr>
+    </table>
+
+    <div class="code-block">
+        <pre>
+import tensorflow as tf
+import numpy as np
+
+# Definir datos
+celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
+fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
+
+# Crear la red neuronal
+oculta1 = tf.keras.layers.Dense(units=3, input_shape=[1])
+oculta2 = tf.keras.layers.Dense(units=3)
+salida = tf.keras.layers.Dense(units=1)
+modelo = tf.keras.Sequential([oculta1, oculta2, salida])
+        </pre>
+    </div>
+
 </body>
 </html>
+
