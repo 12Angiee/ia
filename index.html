@@ -69,6 +69,23 @@
             margin: 20px auto;
             max-width: 800px;
             overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .code-comment {
+            color: #6a9955; /* Green color for comments */
+        }
+
+        .code-keyword {
+            color: #c586c0; /* Purple color for keywords */
+        }
+
+        .code-function {
+            color: #569cd6; /* Blue color for functions */
+        }
+
+        .code-string {
+            color: #d69d85; /* Light red color for strings */
         }
     </style>
 </head>
@@ -120,23 +137,41 @@
         </tr>
     </table>
 
+    <h2>Explicación del Código</h2>
+
     <div class="code-block">
         <pre>
-import tensorflow as tf
-import numpy as np
+<span class="code-comment"># Importa TensorFlow, una librería utilizada para construir y entrenar redes neuronales.</span>
+<span class="code-keyword">import</span> <span class="code-function">tensorflow</span> <span class="code-keyword">as</span> tf 
 
-# Definir datos
-celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
-fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
+<span class="code-comment"># Importa NumPy, una librería para trabajar con arreglos numéricos de manera eficiente.</span>
+<span class="code-keyword">import</span> <span class="code-function">numpy</span> <span class="code-keyword">as</span> np  
 
-# Crear la red neuronal
-oculta1 = tf.keras.layers.Dense(units=3, input_shape=[1])
-oculta2 = tf.keras.layers.Dense(units=3)
-salida = tf.keras.layers.Dense(units=1)
-modelo = tf.keras.Sequential([oculta1, oculta2, salida])
+<span class="code-comment"># Definir datos de entrada y salida</span>
+<span class="code-keyword">celsius</span> = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
+<span class="code-comment"># Define un arreglo de temperaturas en grados Celsius.</span>
+
+<span class="code-keyword">fahrenheit</span> = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
+<span class="code-comment"># Define un arreglo correspondiente de temperaturas en grados Fahrenheit.</span>
+<span class="code-comment"># Estos arreglos son los datos de entrada (celsius) y salida (fahrenheit) que se usarán para entrenar la red.</span>
+
+<span class="code-comment"># Crear la red neuronal</span>
+<span class="code-keyword">oculta1</span> = tf.keras.layers.Dense(units=3, input_shape=[1])
+<span class="code-comment"># Crea la primera capa oculta con 3 neuronas (units=3).</span> 
+<span class="code-comment"># input_shape=[1] indica que la capa recibe un solo valor de entrada (una dimensión).</span>
+
+<span class="code-keyword">oculta2</span> = tf.keras.layers.Dense(units=3)
+<span class="code-comment"># Crea la segunda capa oculta también con 3 neuronas.</span> 
+<span class="code-comment"># No necesita definir input_shape porque ya lo hereda de la capa anterior.</span>
+
+<span class="code-keyword">salida</span> = tf.keras.layers.Dense(units=1)
+<span class="code-comment"># Crea la capa de salida con 1 neurona, que dará el resultado final (la predicción de la temperatura en Fahrenheit).</span>
+
+<span class="code-keyword">modelo</span> = tf.keras.Sequential([oculta1, oculta2, salida])
+<span class="code-comment"># Define un modelo secuencial, que conecta las capas en el orden en que fueron especificadas:</span> 
+<span class="code-comment"># primera capa oculta, segunda capa oculta y finalmente la capa de salida.</span>
         </pre>
     </div>
 
 </body>
 </html>
-
