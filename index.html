@@ -364,6 +364,21 @@
         pass  # Define una excepción personalizada sin ningún comportamiento adicional.<br>
     </p>
     </div>
+punto 6 . 
+    from logic import *
+
+lluvia = Symbol("lluvia")
+bbc = Symbol("bbc")
+unimayor = Symbol("unimayor")
+
+knowledge = And(
+    Implication(Not(lluvia), bbc),
+    Or(bbc, unimayor),
+    Not(And(unimayor, bbc)),
+    unimayor
+)
+
+print(model_check(knowledge, lluvia))
 
 </body>
 </html>
